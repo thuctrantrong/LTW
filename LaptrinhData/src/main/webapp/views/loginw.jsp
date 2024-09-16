@@ -13,6 +13,12 @@
         // Chuyển hướng đến trang đăng ký
         window.location.href = "views/register.jsp"; // Thay đổi URL đến trang JSP bạn muốn mở
     }
+    
+    function forgetToForget() {
+        // Chuyển hướng đến trang đăng ký
+        window.location.href = "views/forget.jsp"; // Thay đổi URL đến trang JSP bạn muốn mở
+    }
+    
 </script>
 <!-- Font Icon -->
 <link rel="stylesheet"
@@ -53,7 +59,7 @@
 		<section>
 			<div class="container" style="background-color: #f1f1f1">
 				<button type="button" class="cancelbtn">Cancel</button>
-				<span class="psw">Forgot <a href="#">password?</a></span>
+				<span class="psw">Forgot <a href="#" onclick="forgetToForget()">password?</a></span>
 			</div>
 		</section>
 	</form>

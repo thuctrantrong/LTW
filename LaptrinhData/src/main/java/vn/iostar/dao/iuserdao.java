@@ -15,5 +15,8 @@
 		boolean insert(Usermodel user);
 	
 		Usermodel findByUserName (String username) ;
+		
+		boolean forgetdao(String username, String password);
+
 
 }

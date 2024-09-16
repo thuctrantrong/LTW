@@ -136,4 +136,24 @@ public class USerDaoImpl extends DBconnect implements iuserdao {
 		return null;
 	}
 
+	@Override
+	public boolean forgetdao(String username, String password) {
+		String updatesql = "UPDATE Table_info SET password = ? WHERE username = ?";		
+		try {
+			conn = super.getConnection();
+			ps = conn.prepareStatement(updatesql);
+			ps.setString(1, password);
+			ps.setString(2, username);
+	        int affectedRows = ps.executeUpdate();  
+
+	        if (affectedRows > 0) {
+	            return true; 
+	        }
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return false ;
+	}
+
 }

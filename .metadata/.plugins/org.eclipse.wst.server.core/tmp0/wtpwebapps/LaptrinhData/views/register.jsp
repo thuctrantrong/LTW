@@ -9,7 +9,7 @@
 <script>
     function redirectToLogin() {
         // Chuyển hướng đến trang đăng ký
-        window.location.href = "/LaptrinhData/Login"; // Thay đổi URL đến trang JSP bạn muốn mở
+        window.location.href = "/LaptrinhData/login"; // Thay đổi URL đến trang JSP bạn muốn mở
     }
 </script>
 </head>

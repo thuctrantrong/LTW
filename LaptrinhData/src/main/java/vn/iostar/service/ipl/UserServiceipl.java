@@ -55,6 +55,15 @@ public class UserServiceipl implements UserService {
 	}
 
 
+	@Override
+	public boolean forget(String username, String password) {
+		if(userDao.forgetdao(username,password) == true) {
+			return true ;
+		}  
+		  return false;
+	}
+
+
 
 
 }
