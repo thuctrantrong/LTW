@@ -38,6 +38,7 @@
             <td>
                 <a href="<c:url value='/admin/category/edit?id=${cate.categoryid}'/>">Sửa</a> | 
                 <a href="<c:url value='/admin/category/delete?id=${cate.categoryid}'/>">Xóa</a>
+                
             </td>
         </tr>
     </c:forEach>

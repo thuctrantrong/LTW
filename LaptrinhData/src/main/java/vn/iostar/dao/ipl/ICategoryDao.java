@@ -112,7 +112,7 @@ public class ICategoryDao extends DBconnect implements ICategory {
 
 	@Override
 	public void delete(int id) {
-		String sql = "Delete from categories wher categoryid = ?";
+		String sql = "Delete from categories where categoryid = ?";
 		try {
 			conn = super.getConnection();
 			ps = conn.prepareStatement(sql);

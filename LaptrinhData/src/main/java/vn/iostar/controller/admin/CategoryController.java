@@ -43,7 +43,9 @@ public class CategoryController extends HttpServlet {
 		}
 		else if(url.contains("delete"))
 		{
-			
+			int id = Integer.parseInt(req.getParameter("id"));
+			cateService.delete(id);
+		    resp.sendRedirect(req.getContextPath() + "/admin/categories");
 		}
 	}
 
@@ -69,7 +71,6 @@ public class CategoryController extends HttpServlet {
 			String status = req.getParameter("status");
 			int statuss = Integer.parseInt(status);
 			String images = "https://cdn-img-v2.mybota.vn/uploadv2/web/82/8269/product/2024/09/20/08/30/1726797000_apple-iphone-16-pro-finish-lineup-240909_big.jpg";
-			// uploadfile
 			CategoryModel category = new CategoryModel();
 			category.setCategoryid(categoryid);
 			category.setCategoryname(categoryname);
@@ -78,5 +79,7 @@ public class CategoryController extends HttpServlet {
 			cateService.update(category);
 			resp.sendRedirect(req.getContextPath() + "/admin/categories");
 		}
+
+
 	}
 }
