@@ -14,8 +14,7 @@ import vn.iostar.service.UserService;
 import vn.iostar.service.ipl.UserServiceipl;
 import vn.iostar.util.Constain;
 
-
-@WebServlet(urlPatterns = {"/login"})
+@WebServlet(urlPatterns = { "/login" })
 public class Login extends HttpServlet {
 	UserService service = new UserServiceipl();
 	/**
@@ -25,19 +24,13 @@ public class Login extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
-		  HttpSession session = req.getSession(false); if (session != null &&
-		  session.getAttribute("account") != null) {
-		  resp.sendRedirect(req.getContextPath()+ "/waiting"); return; } Cookie[]
-		  cookies = req.getCookies(); if (cookies != null) { for (Cookie cookie :
-		  cookies) { if (cookie.getName().equals("username")) { session =
-		  req.getSession(true); session.setAttribute("username", cookie.getValue());
-		  resp.sendRedirect(req.getContextPath()+ "/waiting"); return; } } }
-
+		HttpSession session = req.getSession(false);
+		if (session != null && session.getAttribute("account") != null) {
+			resp.sendRedirect(req.getContextPath() + "/waiting");
+			return;
+		}
 
 		req.getRequestDispatcher("views/loginw.jsp").forward(req, resp);
-
 	}
 
 	@Override
@@ -59,7 +52,6 @@ public class Login extends HttpServlet {
 			req.getRequestDispatcher("/views/loginw.jsp").forward(req, resp);
 			return;
 		}
-
 		Usermodel user = service.login(username, password);
 		if (user != null) {
 			HttpSession session = req.getSession(true);

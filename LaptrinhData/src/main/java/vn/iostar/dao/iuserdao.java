@@ -17,6 +17,8 @@
 		Usermodel findByUserName (String username) ;
 		
 		boolean forgetdao(String username, String password);
+		
+		void update (String username, String imagines);
 
 
 }

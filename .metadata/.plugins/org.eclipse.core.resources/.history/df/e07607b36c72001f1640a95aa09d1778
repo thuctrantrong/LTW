@@ -1,7 +1,0 @@
-package vn.iostar.controller;
-
-
-@WebServlet(urlPatterns= { "/register"})
-public class Register {
-
-}

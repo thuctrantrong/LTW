@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<table>
+	<tr>
+		<th>STT</th>
+		<th>Images</th>
+		<th>CategoryID</th>
+		<th>Categoryname</th>
+		<th>Status</th>
+		<th>Action</th>
+	</tr>
+	
+</table>

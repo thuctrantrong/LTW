@@ -27,7 +27,11 @@ public class UserServiceipl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.findByUserName(username);
 	}
-	
+	@Override
+	public void update(String username, String imagines)
+	{
+		userDao.update(username, imagines);
+	}
 
 	public static void main(String[] args) {
 	 	
@@ -41,12 +45,12 @@ public class UserServiceipl implements UserService {
 
 
 	@Override
-	public Usermodel registeruser(String username, String password, String imagines, String fullname,
+	public Usermodel registeruser(String username, String password, String fullname,
 			String email, String phone, int roleid, String createDate) throws Exception {
 			if(userDao.findByUserName(username) != null) {
 				throw new Exception("Username existed");
 			}
-			Usermodel user = new  Usermodel(username,password,imagines,fullname,email,phone,roleid,createDate);
+			Usermodel user = new  Usermodel(username,password,fullname,email,phone,roleid,createDate);
 			  if (userDao.insert(user) ) { 
 					  return user; 		  
 			  }

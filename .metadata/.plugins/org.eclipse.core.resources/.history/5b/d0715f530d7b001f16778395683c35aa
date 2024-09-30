@@ -1,0 +1,38 @@
+package vn.iostar.configs;
+
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+
+public class DBconnect {
+	
+	static String URL = "jdbc:sqlserver://localhost\\MSSQLSERVER;databaseName=LaptrinhWeb";
+	static String user = "thuc";
+	static String pass = "1";
+	static Connection conn ; 
+	public DBconnect () {}
+	public static Connection getConnection() throws Exception {
+		
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			return DriverManager.getConnection(URL,user,pass);
+	            
+	       
+	}
+	 public static void main(String[] args) {
+	        try {
+	            Connection c = getConnection();
+	            if (c == null ) 
+	            {
+	            	System.out.print("something wrong ");
+	            }
+	            else 
+	            {
+	            	System.out.print("ok");
+	            }
+	        } catch (Exception ex) {
+	            ex.printStackTrace();
+	        } 
+	        
+	    }
+	
+}

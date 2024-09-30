@@ -2,18 +2,28 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.beans.Statement"/>
     <fullyQualifiedTypeName name="vn.iostar.dao.iuserdao"/>
     <fullyQualifiedTypeName name="vn.iostar.dao.ipl.USerDaoImpl"/>
     <fullyQualifiedTypeName name="org.eclipse.tags.shaded.org.apache.bcel.classfile.Constant"/>
     <fullyQualifiedTypeName name="vn.iostar.service.UserService"/>
     <fullyQualifiedTypeName name="vn.iostar.service.ipl.UserServiceipl"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="vn.iostar.model.Usermodel"/>
+    <fullyQualifiedTypeName name="java.nio.file.Paths"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="vn.iostar.dao.ipl.ICategoryDao"/>
+    <fullyQualifiedTypeName name="vn.iostar.dao.ICategory"/>
+    <fullyQualifiedTypeName name="vn.iostar.model.CategoryModel"/>
+    <fullyQualifiedTypeName name="java.security.PublicKey"/>
+    <fullyQualifiedTypeName name="vn.iostar.service.ICategoryService"/>
+    <fullyQualifiedTypeName name="vn.iostar.service.ipl.CategoryServiceImpl"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="vn.iostar.configs.DBconnect"/>
 </qualifiedTypeNameHistroy>

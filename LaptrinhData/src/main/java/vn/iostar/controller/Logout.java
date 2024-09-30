@@ -16,6 +16,7 @@ public class Logout extends HttpServlet {
 	private static final long serialVersionUID = -2293530038559386286L;
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

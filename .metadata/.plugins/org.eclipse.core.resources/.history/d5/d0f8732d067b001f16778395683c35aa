@@ -1,0 +1,76 @@
+package vn.iostar.dao.ipl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import vn.iostar.configs.DBconnect;
+import vn.iostar.dao.ICategory;
+import vn.iostar.model.CategoryModel;
+
+public class ICategoryDao implements ICategory {
+
+	public Connection conn = null ; 
+	public PreparedStatement ps = null ; 
+	public ResultSet rs = null ; 
+	@Override
+	public List<CategoryModel> findAll() {
+		String sql = "Select * from catgories";
+		List<CategoryModel> list = new ArrayList<>();
+		try {
+			conn = new DBconnect().getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next())
+			{
+				CategoryModel category = new CategoryModel();
+				category.setCategoryid(rs.getInt("categoryid"));
+				category.setCategoryname(rs.getString("categoryname"));
+				category.setImages(rs.getString("images"));
+				category.setStatus(rs.getInt("status"));
+				list.add(category);
+			}
+			conn.close();
+			ps.close();
+			rs.close();
+		}
+		catch (Exception e)
+		{
+			
+		}
+		return null;
+	}
+
+	@Override
+	public CategoryModel findByID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insert(CategoryModel category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(CategoryModel category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<CategoryModel> findtype(String keywword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

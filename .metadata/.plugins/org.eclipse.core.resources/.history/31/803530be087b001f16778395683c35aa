@@ -1,0 +1,49 @@
+package vn.iostar.service.ipl;
+
+import java.util.List;
+
+import vn.iostar.dao.ICategory;
+import vn.iostar.dao.ipl.ICategoryDao;
+import vn.iostar.model.CategoryModel;
+import vn.iostar.service.ICategoryService;
+
+public class CategoryServiceImpl implements ICategoryService {
+
+	public ICategory cateDao= new ICategoryDao();
+	@Override
+	public List<CategoryModel> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CategoryModel findByID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insert(CategoryModel category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(CategoryModel category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<CategoryModel> findtype(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

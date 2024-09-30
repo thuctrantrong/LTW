@@ -23,7 +23,7 @@ public class Watting extends HttpServlet{
 			Usermodel u = (Usermodel) session.getAttribute("account");
 			req.setAttribute("username", u.getUsername());
 			if (u.getRoleid() == 1) {
-				resp.sendRedirect(req.getContextPath() + "/admin/home");
+				resp.sendRedirect(req.getContextPath() + "/admin/category-list.jsp");
 			} else if (u.getRoleid() == 2) {
 				resp.sendRedirect(req.getContextPath() + "/manager/home");
 			} else {

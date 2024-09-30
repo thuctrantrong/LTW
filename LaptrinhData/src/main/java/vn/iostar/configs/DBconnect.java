@@ -12,7 +12,6 @@ public class DBconnect {
 	static Connection conn ; 
 	public static Connection getConnection() throws Exception {
 		
-		
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			return DriverManager.getConnection(URL,user,pass);
 	            

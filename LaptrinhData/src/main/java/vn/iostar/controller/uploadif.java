@@ -1,0 +1,74 @@
+package vn.iostar.controller;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
+import vn.iostar.model.Usermodel;
+import vn.iostar.service.UserService;
+import vn.iostar.service.ipl.UserServiceipl;
+
+@WebServlet("/update")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+		maxFileSize = 1024 * 1024 * 10, // 10MB
+		maxRequestSize = 1024 * 1024 * 50) // 50MB
+public class uploadif extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	UserService service = new UserServiceipl();
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession(false);
+		Usermodel user = (Usermodel) session.getAttribute("account");
+		if (user != null) {
+			String username = user.getUsername();
+			String password = user.getPassword();
+			String fullname = user.getFullname();
+			String email = user.getEmail();
+			String imagines = user.getImagines();
+			String phone = user.getPhone();
+			int roleid = user.getRoleid();
+			String createDate = user.getCreateDate();
+			req.setAttribute("username", username);
+			req.setAttribute("password", password);
+			req.setAttribute("fullname", fullname);
+			req.setAttribute("imagines", imagines);
+			req.setAttribute("email", email);
+			req.setAttribute("phone", phone);
+			req.setAttribute("roleid", roleid);
+			req.setAttribute("createDate", createDate);
+		}
+		req.getRequestDispatcher("/views/ifu.jsp").forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession(false);
+		Usermodel user = (Usermodel) session.getAttribute("account");
+		Part part = req.getPart("image");
+		String realPath = req.getServletContext().getRealPath("/img");
+		String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
+		if (!Files.exists(Paths.get(realPath))) {
+			Files.createDirectories(Paths.get(realPath));
+		}
+		part.write(realPath + "/" + fileName);
+		service.update(user.getUsername(), fileName);
+		user.setImages(fileName);
+		session.setAttribute("account", user); 
+		resp.sendRedirect(req.getContextPath() + "/update");
+	}
+
+}
